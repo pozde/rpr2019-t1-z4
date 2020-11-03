@@ -6,9 +6,12 @@ public class Supermarket {
     int prolaz=0;
 
     public void dodajArtikl(Artikl a) {
-        prolaz=prolaz+1;
-        artikli[prolaz]=new Artikl(a.getNaziv(),a.getCijena(),a.getKod());
+        if(prolaz>50) {
+            return;
+        }
 
+        artikli[prolaz]=new Artikl(a.getNaziv(),a.getCijena(),a.getKod());
+        prolaz=prolaz+1;
     }
 
     public Artikl[] getArtikli() {

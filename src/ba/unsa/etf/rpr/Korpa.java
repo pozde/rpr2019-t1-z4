@@ -31,8 +31,11 @@ public class Korpa {
     }
 
     public boolean dodajArtikl(Artikl a) {
-        prolaz=prolaz+1;
+        if(prolaz>50)
+                return false;
         artikli[prolaz]=new Artikl(a.getNaziv(),a.getCijena(),a.getKod());
+        prolaz=prolaz+1;
+
         return true;
     }
 }
